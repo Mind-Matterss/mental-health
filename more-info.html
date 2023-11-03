@@ -1,0 +1,352 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.voiceflow.com/widget/bundle.mjs" type="text/javascript"></script><script src="index.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("Rd3mHd463h5834Gyv");
+    })();
+  </script>
+  <style>
+      body{
+        font-family:Arial;
+        background-image: url('images/more-info-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        scroll-behavior: smooth;
+
+      }
+      html{
+        padding-top: 50px;
+      }
+
+      main{
+        margin:50px;
+        padding:20px;
+        padding-top: 50px;
+        border: 3px solid white;
+        border-radius: 25px;
+        background-color: rgba(255,255,255,0.3);
+      }
+
+      #name{
+          border:none;
+          outline:none;
+          width: 100%;
+          height:30px;
+          border-bottom: 1px solid #ccc;
+          background-color: transparent;
+          
+          
+      }
+      #email{
+          border:none;
+          outline:none;
+          width: 100%;
+          height:30px;
+          border-bottom: 1px solid #ccc;
+          background-color: transparent;
+      }
+
+      textarea{
+          border:none;
+          font-size: 18px;
+          border-bottom: 1px solid #ccc;
+          outline: none;
+          height:150px;
+          width:100%;
+          overflow: hidden;
+          resize:none;
+          white-space: wrap;
+          background-color: transparent;
+
+
+      }
+
+      
+
+      #sub-button{
+          position: relative;
+          top: 50%;
+          font-size: 20px;
+          border: solid 2px #ccc;
+          width: 80%;
+          height: 50px;
+          text-align:center;
+          justify-content:center;
+          border-radius: 25px;
+          left:10%;
+          font-weight:bold;
+          font-size:2em;
+      }
+
+      #title{
+          padding-bottom: 20px;
+          font-size: 3em;
+      }
+      
+        
+
+
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<style type="text/css">
+
+
+    .button:hover + #nav{
+      display: block;
+      position: fixed;
+      
+      left:0px;
+      
+  }
+  .button{
+      position:fixed;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      
+      
+  }
+  .material-symbols-outlined{
+      font-size: 35px;
+      width: 40px;
+      height:40px;
+      background: transparent;
+      border: none;
+      
+  }
+
+  #nav{
+      transition: ease-in-out 0.3s;
+      left:-300px;
+      width: 275px;
+      max-width:75%;
+      background:#1c1c1c;
+      height:100%;
+      position:fixed;
+      display:block;
+      padding-top: 35px;
+      padding-left: 20px;
+      
+  }
+  #nav:hover{
+      display:block;
+      left:0px;
+      
+  }
+
+  #navbuttons {
+      background-color: transparent;
+      font-size: 1.3em;
+      border:none;
+      padding:none;
+      margin:none;
+      text-align:left;
+      color: white;
+
+  }
+
+  #menubar{
+      background-color: transparent;
+      height: 75px;
+      position: fixed;
+      top: 0px;
+      left:0px;
+  }
+
+  #logo{
+      width:200px;
+      position: fixed;
+      right:10px;
+      padding:5px;
+      
+  }
+
+</style>
+<body>
+<div id="menubar">
+    <button class="button"><span class="material-symbols-outlined">menu</span></button>
+    
+    <div id="nav"><br>
+        <a href="index.html"><button id="navbuttons">Home</button></a><br><br><br>
+        <a href="mental-health-test.html"><button id="navbuttons"><b>Mental Health Test</b></button></a><br><br><br>
+        <a href="common-mental-problems.html"><button id="navbuttons">Common Mental Problems</button></a><br><br><br>
+        <a href="mind-course.html"><button id="navbuttons">Mind Course</button></a><br><br><br>
+        <a href="terms-and-conditions.html"><button id="navbuttons">Terms and Conditions</button></a><br><br><br>
+        <a href="about-us.html"><button id="navbuttons">About Us</button></a><br><br><br>
+    </div>
+    <a href="index.html"><img src='images/logo.jpg' id="logo"></a>
+
+
+</div>
+</body>
+
+
+<body>
+  <script type="text/javascript">
+
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '64ed81839c1d720007cc027e' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+    <main>
+    <h2 id="title">MORE INFO</h2>
+    
+  <form id="myform" onsubmit="event.preventDefault();myfunction()">
+      
+
+      <h4><b>Name: <input type="text" id="name" required="" placeholder="Enter Your Name Here" class="form-control"></b><br>
+      <br><b>Email: <input type="email" id="email" required="" placeholder="abc@gmail.com" class="form-control"></b><br><br><br></h4>
+
+      <h3><b>Q1. Let's start with your physical health.<br>
+          Tell us about any physical activities that you have been doing recently.<br>
+           <br><textarea id="a" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+      
+           <b>Q2. Tell us about your friends, relatives and other people you spend time with.
+              <br><br><textarea id="b" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+              <b>Q3. Do you think you can share it with anyone of them without any hesitation?<br>
+                  If you already have, can you tell us how supportive they were on this issue and what was their reaction?
+                  <br><br><textarea  id="c" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+
+                  <b>Q4. Would you like to share any traumatic event you have
+                      ever experienced or witnessed (if any)  that might still throb you?
+                      
+                      <br><br><textarea  id="d" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+<!--cdsfvdsvfdsvdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+                      <b>Q5. Please tell us about your self-perception.
+                          
+                          <br><br><textarea  id="e" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+                          <b>Q6. Could you tell me about any times over the past few months that you’ve been bothered by low feelings, stress, or sadness?
+                              
+                              <br><br><textarea  id="f" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+                              <b>Q7. How frequently have you been bothered by not being able to stop worrying?
+
+                                  
+                                  <br><br><textarea  id="g" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+                                  <b>Q8. Can you tell me about your hopes and dreams for the future? What feelings have you had recently about working toward those goals?
+                                      
+                                      <br><br><textarea  id="h" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+                                      <b>Q9. Can you tell us about your sleep and eating patterns?
+                                          
+                                          <br><br><textarea  id="i" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+
+                                          <b>Q10. Is there anything else you would like us to know?
+
+                                              <br><br><textarea  id="j" required="" placeholder="Your Answer" ></textarea></b><br><br><br>
+                                                      </h3>
+                                 
+          
+                                                      <br><Br><br><div style="font-size:20px;"><b>Note</b>: This form is responded by a human and may take upto a week to respond.</div><br><br>
+                                                      <label><span><input type="submit" id="sub-button" value="Submit"></span></label><br><br><br><br><br><br>
+                                                  </form>    
+
+
+
+
+                                                </main>
+
+<script type="text/javascript">
+
+  
+
+
+
+function myfunction() {
+  var form = document.getElementById("myform");
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+});
+
+  
+  
+  var a1 = document.getElementById("a").value;
+  var a2 = document.getElementById("b").value;
+  var a3 = document.getElementById("c").value;
+  var a4 = document.getElementById("d").value;
+  var a5 = document.getElementById("e").value;
+  var a6 = document.getElementById("f").value;
+  var a7 = document.getElementById("g").value;
+  var a8 = document.getElementById("h").value;
+  var a9 = document.getElementById("i").value;
+  var a10 = document.getElementById("j").value;
+  console.log("Q1: "+a1 +"\nQ2: "+a2 +"\nQ3: "+a3 +"\nQ4: "+a4 +"\nQ5: "+a5 +"\nQ6: "+a6 +"\nQ7: "+a7 +"\nQ8: "+a8 +"\nQ9: "+a9 +"\nQ10: "+a10)
+
+
+
+
+
+  var params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: "Q1: "+a1 +"\nQ2: "+a2 +"\nQ3: "+a3 +"\nQ4: "+a4 +"\nQ5: "+a5 +"\nQ6: "+a6 +"\nQ7: "+a7 +"\nQ8: "+a8 +"\nQ9: "+a9 +"\nQ10: "+a10
+    };
+  
+    const serviceID = "service_mindmatters";
+    const templateID = "template_dorxp59";
+  
+      emailjs.send(serviceID, templateID, params)
+      .then(res=>{
+          
+          
+          console.log(res);
+          console.log("Your message sent successfully!!")
+  
+      })
+      .catch(err=>console.log(err));
+
+
+      document.body.innerHTML = "<center><h1>Thank You.</h1><h1>You response has been submited.</h1></center>"
+      window.scrollTo(0,0)
+
+  }
+
+
+  function validateForm() {
+
+      var inputs = document.querySelectorAll("input[required], textarea[required]");
+
+      for (var i = 0; i < inputs.length; i++) {
+
+        if (!inputs[i].checkValidity()) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+
+    var form = document.getElementById("myForm");
+    form.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      var valid = validateForm();
+
+      if (valid) {
+        myFunction();
+        form.submit();
+      }
+    });
+</script>
+</body></html>

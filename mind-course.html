@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        body{
+            font-family: Arial;
+            padding-left: 20px;
+            padding-top: 50px;
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<style type="text/css">
+
+
+    .button:hover + #nav{
+      display: block;
+      position: fixed;
+      
+      left:0px;
+      
+  }
+  .button{
+      position:fixed;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      
+      
+  }
+  .material-symbols-outlined{
+      font-size: 35px;
+      width: 40px;
+      height:40px;
+      background: transparent;
+      border: none;
+      
+  }
+
+  #nav{
+      transition: ease-in-out 0.3s;
+      left:-300px;
+      width: 275px;
+      max-width:75%;
+      background:#1c1c1c;
+      height:100%;
+      position:fixed;
+      display:block;
+      padding-top: 35px;
+      padding-left: 20px;
+      
+  }
+  #nav:hover{
+      display:block;
+      left:0px;
+      
+  }
+
+  #navbuttons {
+      background-color: transparent;
+      font-size: 1.3em;
+      border:none;
+      padding:none;
+      margin:none;
+      text-align:left;
+      color: white;
+      font-family: arial;
+
+  }
+
+
+  #menubar{
+      background-color: transparent;
+      height: 75px;
+      position: fixed;
+      top: 0px;
+      left:0px;
+  }
+
+  #logo{
+      width:200px;
+      position: fixed;
+      right:10px;
+      padding:5px;
+      
+  }
+
+</style>
+<body>
+<div id="menubar">
+    <button class="button"><span class="material-symbols-outlined">menu</span></button>
+    
+    <div id="nav"><br>
+        <a href="index.html"><button id="navbuttons">Home</button></a><br><br><br>
+        <a href="mental-health-test.html"><button id="navbuttons">Mental Health Test</button></a><br><br><br>
+        <a href="common-mental-problems.html"><button id="navbuttons">Common Mental Problems</button></a><br><br><br>
+        <a href="mind-course.html"><button id="navbuttons"><b>Mind Course</b></button></a><br><br><br>
+        <a href="terms-and-conditions.html"><button id="navbuttons">Terms and Conditions</button></a><br><br><br>
+        <a href="about-us.html"><button id="navbuttons">About Us</button></a><br><br><br>
+    </div>
+    <a href="index.html"><img src='images/logo.jpg' id="logo"></a>
+
+
+</div>
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '64ed81839c1d720007cc027e' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+
+            <div ><iframe style="max-width:100%; max-height:100%;float:left" width="560" height="315" src="https://www.youtube.com/embed/kW3U7J_yio0?si=rKqZmCd0iLInqhxj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><label style="font-size:50px;font-family:Arial;color:#335e96;"><b> Relaxation Music</b><br><p style="font-size:24px;font-family:Arial;color:black;">Sit in a quiet place. Close your eyes and try not to think about anything. Just relax....</p><br><br></label></div>
+            <br><br><br><br><br>
+            <div ><iframe style="max-width:100%; max-height:100%;float:left" width="560" height="315" src="https://www.youtube.com/embed/s-w4gdo_IH4?si=tfaz-GDPzGnlkb1G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><label style="font-size:50px;font-family:Arial;color:#335e96;"><b> Yoga For Mind Peace</b><br><p style="font-size:24px;font-family:Arial;color:black;">This video has 5 different yoga poses for calming and relaxing your mind. Take out your yoga mats and follow the procedures....</p></label><br></div>
+    <br><br><br><br><br><br>
+</body>
+</html>
