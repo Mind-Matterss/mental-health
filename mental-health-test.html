@@ -7,23 +7,28 @@
     <!--Add info for all questions using css-->
 
 
-
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Mind Matters</title>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                        
+
+
     <style type="text/css">
         
 
         html{
+            padding: 20px;
             font-family: Arial;
             scroll-behavior: smooth;
-            padding-top:50px;
+            
 
         }
 
         body{
             display:flex;
+             
             justify-content: center;
             align-items: center;
             background-image: url('images/mental-health-test-bg.png');
@@ -123,7 +128,7 @@
 
         #submit-button{
             
-            top: 50%;
+            
             font-size: 20px;
             border: solid 2px #ccc;
             width: 100%;
@@ -148,9 +153,8 @@
             border-radius:10px; 
             padding:20px; 
             padding-bottom:50px;
-            background-color: rgba(255,255,255,0.3);
-            min-width: 50%;
-            max-width: 90%;
+            background-color: rgba(255,255,255,0.2);
+            
             
         }
         
@@ -187,77 +191,76 @@
     <style type="text/css">
     
     
-       .button:hover + #nav{
-      display: block;
-      position: fixed;
-      
-      left:0px;
-      
-  }
-  .button{
-      position:fixed;
-      padding: 10px;
-      background: transparent;
-      border: none;
-      
-      
-  }
-  .material-symbols-outlined{
-      font-size: 35px;
-      width: 40px;
-      height:40px;
-      background: transparent;
-      border: none;
-      
-  }
-
-  #nav{
-      transition: ease-in-out 0.3s;
-      left:-300px;
-      width: 275px;
-      top:0px;
-      max-width:75%;
-      background:#1c1c1c;
-      height:100%;
-      position:fixed;
-      display:block;
-      padding-top: 35px;
-      padding-left: 20px;
-      z-index: 10;
-      
-  }
-  #nav:hover{
-      display:block;
-      left:0px;
-      
-  }
-
-  #navbuttons {
-      background-color: transparent;
-      font-size: 1.3em;
-      border:none;
-      padding:none;
-      margin:none;
-      text-align:left;
-      color: white;
-
-  }
-
-  #menubar{
-      background-color: rgba(255,255,255,0.8);
-      height: 70px;
-      position: fixed;
-      top: 0px;
-      left:0px;
-  }
-
-  #logo{
-      width:200px;
-      position: fixed;
-      right:10px;
-      padding:5px;
-      
-  }
+        .button:hover + #nav{
+          display: block;
+          position: fixed;
+          
+          left:0px;
+          
+      }
+      .button{
+          position:fixed;
+          padding: 10px;
+          background: transparent;
+          border: none;
+          
+          
+      }
+      .material-symbols-outlined{
+          font-size: 35px;
+          width: 40px;
+          height:40px;
+          background: transparent;
+          border: none;
+          
+      }
+    
+      #nav{
+          transition: ease-in-out 0.3s;
+          left:-300px;
+          width: 275px;
+          max-width:75%;
+          background:#1c1c1c;
+          height:100%;
+          position:fixed;
+          display:block;
+          padding-top: 35px;
+          padding-left: 20px;
+          z-index:10;
+          
+      }
+      #nav:hover{
+          display:block;
+          left:0px;
+          
+      }
+    
+      #navbuttons {
+          background-color: transparent;
+          font-size: 1.3em;
+          border:none;
+          padding:none;
+          margin:none;
+          text-align:left;
+          color: white;
+    
+      }
+    
+      #menubar{
+          background-color: transparent;
+          height: 75px;
+          position: fixed;
+          top: 0px;
+          left:0px;
+      }
+    
+      #logo{
+          width:200px;
+          position: fixed;
+          right:10px;
+          padding:5px;
+          
+      }
     
     </style>
     <body>
@@ -283,6 +286,7 @@
 <body>
 
 <main id="mainbody">
+    <h1 style='position:fixed; color:transparent;'>Mental Health Test</h1>
     
     <h2 id="ver">VERIFY</h2>
     
@@ -300,7 +304,7 @@
             <span id = "submit-form"><b>Enter OTP:&nbsp;&nbsp;</b>&nbsp;&nbsp;
                 <input type="number" id="otpp" min="0000" max="9999" placeholder="Enter your OTP" required style="width:168px;" oninvalid="this.setCustomValidity('Please enter a valid OTP.')" oninput="this.setCustomValidity('')"><button id = "otpbutton" onclick="OTPgenerator()">Get OTP</button><br><span id="otperror"></span></b><br>
                 <br><b>*We will send you a copy of your result on the given email id.</b>
-                <br><br><br><input type="submit" id="submit-button"></span><br></form>
+                <br><br><br><button id="submit-button">Submit</button></span><br></form>
 
 
 
@@ -412,7 +416,7 @@ function OTPgenerator(){
         OTP += Math.floor(Math.random() *10)
         
     }
-    console.log(OTP)
+    
     
 
 
@@ -442,7 +446,7 @@ function Verify(){
       getValue()
     }
     else{
-        console.log('dsadsa')
+        
         document.getElementById('otperror').innerHTML = "*OTP Incorrect"
     }   
     }
@@ -472,9 +476,7 @@ function getValue(){
 
     }
 
-    console.log(nname)
-    console.log(mail)
-    console.log(age)
+
     
 
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n1()"><b><label id="p1" style="display:block;"><font size = "4">Do you feel sad, hopeless or empty?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b><font size = "3"><label><span><br><input required type = "radio" name = "Q1" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q1" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q1" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q1" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q1" value = "0">Never/No</span></label><br></font>'+next
@@ -490,7 +492,7 @@ function n1(){
     q1 = data[b].value;
     }
     }
-        console.log(q1);
+
     
 
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n2()"><b><label id="p2" style="display:block;"><font size = "4">Have you lost interest in activities?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div abovedsadaadadadada.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q2" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q2" value = "0">No</span></label><br></font>'+next
@@ -510,7 +512,7 @@ function n2(){
     }
     }
 
-    console.log(q2);
+
 
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n3()"><b><label id="p3" style="display:block;"><font size = "4">Have you experienced any recent changes in appetite or sleep patterns?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q3" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q3" value = "0">No</span></label><br></font>'+next
 
@@ -526,8 +528,7 @@ if (data[d].checked){
 q3 = data[d].value;
 }
 }
-console.log(q1)
-    console.log(q3);
+
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n4()"><b><label id="p4" style="display:block;"><font size = "4">Do you experience extreme mood swings?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q4" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q4" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q4" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q4" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q4" value = "0">Never/No</span></label><br></font>'+next
 
@@ -543,7 +544,7 @@ if (data[e].checked){
 q4 = data[e].value;
 }
 }
-    console.log(q4);
+
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n5()"><b><label id="p5" style="display:block;"><font size = "4">Do you think that you have experienced any of these?<br>1. Impulsive thoughts (Ideas or images that pop into one'+"'"+'s mind spontaneously)<br>2. High energy<br>3. Racing thoughts (A fast-paced bout of thoughts that seem to come quickly and out of nowhere)<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q5" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q5" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q5" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q5" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q5" value = "0">Never/No</span></label><br></font>'+next
 
@@ -559,7 +560,7 @@ if (data[f].checked){
 q5 = data[f].value;
 }
 }
-    console.log(q5);
+
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n6()"><b><label id="p6" style="display:block;"><font size = "4">Do you believe in things that can or cannot happen in real life?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q6" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q6" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q6" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q6" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q6" value = "0">Never/No</span></label><br></font>'+next
 
@@ -576,7 +577,7 @@ if (data[g].checked){
 q6 = data[g].value;
 }
 }
-    console.log(q6);
+   
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n7()"><b><label id="p7" style="display:block;"><font size = "4">Do you feel on the edge?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q7" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q7" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q7" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q7" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q7" value = "0">Never/No</span></label><br></font>'+next
 
@@ -593,7 +594,7 @@ if (data[h].checked){
 q7 = data[h].value;
 }
 }
-    console.log(q7);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n8()"><b><label id="p8" style="display:block;"><font size = "4">Do you think you are easily startled or irritable?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q8" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q8" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q8" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q8" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q8" value = "0">Never/No</span></label><br></font>'+next
 }
@@ -609,7 +610,7 @@ if (data[i].checked){
 q8 = data[i].value;
 }
 }
-    console.log(q8);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n9()"><b><label id="p9" style="display:block;"><font size = "4">Do you see or hear things that are not actually present there?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q9" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q9" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q9" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q9" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q9" value = "0">Never/No</span></label><br></font>'+next
 
@@ -625,7 +626,7 @@ if (data[j].checked){
 q9 = data[j].value;
 }
 }
-    console.log(q9);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n10()"><b><label id="p10" style="display:block;"><font size = "4">Do you suffer extreme weight loss?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q10" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q10" value = "0">No</span></label><br></font>'+next
 
@@ -640,7 +641,7 @@ if (data[k].checked){
 q10 = data[k].value;
 }
 }
-    console.log(q10);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n11()"><b><label id="p11" style="display:block;"><font size = "4">Are you a selective eater and sometimes have little or no interest in eating?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q11" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q11" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q11" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q11" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q11" value = "0">Never/No</span></label><br></font>'+next
 
@@ -655,7 +656,7 @@ if (data[l].checked){
 q11 = data[l].value;
 }
 }
-    console.log(q11);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n12()"><b><label id="p12" style="display:block;"><font size = "4">Do you have a distorted perception on how someone sees your body?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q12" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q12" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q12" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q12" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q12" value = "0">Never/No</span></label><br></font>'+next
 
@@ -670,7 +671,7 @@ if (data[m].checked){
 q12 = data[m].value;
 }
 }
-    console.log(q12);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n13()"><b><label id="p13" style="display:block;"><font size = "4">Do you binge eat first, followed by purging( vomiting, laxative use, excessive exercise)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q13" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q13" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q13" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q13" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q13" value = "0">Never/No</span></label><br></font>'+next
 
@@ -685,7 +686,7 @@ if (data[n].checked){
 q13 = data[n].value;
 }
 }
-    console.log(q13);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n14()"><b><label id="p14" style="display:block;"><font size = "4">Do you have recurring episodes of uncontrollable eating?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q14" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q14" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q14" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q14" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q14" value = "0">Never/No</span></label><br></font>'+next
 
@@ -700,7 +701,7 @@ if (data[o].checked){
 q14 = data[o].value;
 }
 }
-    console.log(q14);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n15()"><b><label id="p15" style="display:block;"><font size = "4">Do you experience difficulty falling or staying asleep?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q15" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q15" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q15" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q15" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q15" value = "0">Never/No</span></label><br></font>'+next
 
@@ -715,7 +716,7 @@ if (data[p].checked){
 q15 = data[p].value;
 }
 }
-    console.log(q15);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n16()"><b><label id="p16" style="display:block;"><font size = "4">Do you experience breathing interruptions during sleep, leading to snoring, gasping, or choking?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q16" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q16" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q16" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q16" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q16" value = "0">Never/No</span></label><br></font>'+next
 
@@ -730,7 +731,7 @@ if (data[q].checked){
 q16 = data[q].value;
 }
 }
-    console.log(q16);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n17()"><b><label id="p17" style="display:block;"><font size = "4">Do you experience sudden episodes of falling asleep during the day?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q17" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q17" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q17" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q17" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q17" value = "0">Never/No</span></label><br></font>'+next
 
@@ -746,7 +747,7 @@ if (data[r].checked){
 q17 = data[r].value;
 }
 }
-    console.log(q17);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n18()"><b><label id="p18" style="display:block;"><font size = "4">Do you experience two or more distinct identities or personality state?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q18" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q18" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q18" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q18" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q18" value = "0">Never/No</span></label><br></font>'+next
 
@@ -761,7 +762,7 @@ if (data[s].checked){
 q18 = data[s].value;
 }
 }
-    console.log(q18);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n19()"><b><label id="p19" style="display:block;"><font size = "4">Do you feel detached from yourself or your surroundings?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q19" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q19" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q19" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q19" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q19" value = "0">Never/No</span></label><br></font>'+next
 
@@ -777,7 +778,7 @@ if (data[t].checked){
 q19 = data[t].value;
 }
 }
-    console.log(q19);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n20()"><b><label id="p20" style="display:block;"><font size = "4">Do you worry alot about having a serious illness, despite no medical evidence?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q20" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q20" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q20" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q20" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q20" value = "0">Never/No</span></label><br></font>'+next
 
@@ -791,7 +792,7 @@ if (data[u].checked){
 q20 = data[u].value;
 }
 }
-    console.log(q20);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n21()"><b><label id="p21" style="display:block;"><font size = "4">Do you experience physical symptoms like paralysis or blindness that has no medical explanation?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q21" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q21" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q21" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q21" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q21" value = "0">Never/No</span></label><br></font>'+next
 
@@ -805,7 +806,7 @@ if (data[v].checked){
 q21 = data[v].value;
 }
 }
-    console.log(q21);
+    
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n22()"><b><label id="p22" style="display:block;"><font size = "4">Do you experience difficulty with relationships or socializing?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q22" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q22" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q22" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q22" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q22" value = "0">Never/No</span></label><br></font>'+next
 
@@ -820,7 +821,6 @@ if (data[w].checked){
 q22 = data[w].value;
 }
 }
-    console.log(q22);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n23()"><b><label id="p23" style="display:block;"><font size = "4">Do you experience unstable or intense emotions?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q23" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q23" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q23" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q23" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q23" value = "0">Never/No</span></label><br></font>'+next
 
@@ -835,7 +835,6 @@ if (data[x].checked){
 q23 = data[x].value;
 }
 }
-    console.log(q23);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n24()"><b><label id="p24" style="display:block;"><font size = "4">Do you have a distorted self-image or self-esteem about yourself?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q24" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q24" value = "0">No</span></label><br></font>'+next
 
@@ -850,7 +849,6 @@ if (data[y].checked){
 q24 = data[y].value;
 }
 }
-    console.log(q24);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n25()"><b><label id="p25" style="display:block;"><font size = "4">Do you disregard other'+"'"+'s rights?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q25" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q25" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q25" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q25" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q25" value = "0">Never/No</span></label><br></font>'+next
 
@@ -865,7 +863,6 @@ if (data[z].checked){
 q25 = data[z].value;
 }
 }
-    console.log(q25);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n26()"><b><label id="p26" style="display:block;"><font size = "4">Do you think you are impulsive (unable to inhibit behavioral impulses or thoughts)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q26" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q26" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q26" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q26" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q26" value = "0">Never/No</span></label><br></font>'+next
 
@@ -880,7 +877,6 @@ if (data[aa].checked){
 q26 = data[aa].value;
 }
 }
-    console.log(q26);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n31()"><b><label id="p27" style="display:block;"><font size = "4">Do you often want to or think to engage in criminal behavior?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q27" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q27" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q27" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q27" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q27" value = "0">Never/No</span></label><br></font>'+next
 
@@ -896,7 +892,6 @@ if (data[ab].checked){
 q27 = data[ab].value;
 }
 }
-    console.log(q27);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n28()"><b><label id="p28" style="display:block;"><font size = "4">Do you feel a significant disconnect between your general identity or your biological gender?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q28" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q28" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q28" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q28" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q28" value = "0">Never/No</span></label><br></font>'+next
 
@@ -911,7 +906,6 @@ if (data[ac].checked){
 q28 = data[ac].value;
 }
 }
-    console.log(q28);
 
     if (age > 20){
 
@@ -934,7 +928,6 @@ function n31(){
     q29 = data[ad].value;
     }
     }
-        console.log(q29);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n33()"><b><label id="p32" style="display:block;"><font size = "4">Have you noticed a change in emotional or physical behavior due to a stressor (like divorce, job loss, low marks or failing in examinations etc.)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q32" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q32" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q32" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q32" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q32" value = "0">Never/No</span></label><br></font>'+next
 
@@ -951,7 +944,6 @@ function n33(){
     q32 = data[ag].value;
     }
     }
-        console.log(q32);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n34()"><b><label id="p34" style="display:block;"><font size = "4">Do you experience progressive loss of memory or cognitive function?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q34" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q34" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q34" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q34" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q34" value = "0">Never/No</span></label><br></font>'+next
 
@@ -966,7 +958,6 @@ if (data[ai].checked){
 q34 = data[ai].value;
 }
 }
-    console.log(q34);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n35()"><b><label id="p35" style="display:block;"><font size = "4">Do you experience disorganized speech or behavior?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q35" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q35" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q35" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q35" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q35" value = "0">Never/No</span></label><br></font>'+next
 
@@ -981,7 +972,6 @@ if (data[aj].checked){
 q35 = data[aj].value;
 }
 }
-    console.log(q35);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n42()"><b><label id="p36" style="display:block;"><font size = "4">Do you experience difficulty with emotions, motivation, and social interaction?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q36" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q36" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q36" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q36" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q36" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1001,7 +991,6 @@ if (data[ak].checked){
 q36 = data[ak].value;
 }
 }
-    console.log(q36);
 
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n43()"><b><label id="p43" style="display:block;"><font size = "4">Do you think you have a sensory (related to senses) overreaction to something or someone or aversion (A strong feeling of disliking something/somebody)<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q43" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q43" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q43" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q43" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q43" value = "0">Never/No</span></label><br></font>'+next
@@ -1017,7 +1006,6 @@ if (data[ar].checked){
 q43 = data[ar].value;
 }
 }
-    console.log(q43);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n44()"><b><label id="p44" style="display:block;"><font size = "4">Do you experience repetitive behaviors or interests (like arm or hand-flapping, finger flicking, rocking, jumping, spinning or twirling, head-banging or other complex body movements)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q44" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q44" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q44" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q44" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q44" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1032,7 +1020,6 @@ if (data[as].checked){
 q44 = data[as].value;
 }
 }
-    console.log(q44);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n45()"><b><label id="p45" style="display:block;"><font size = "4">Do you worry or fear alot?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q45" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q45" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q45" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q45" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q45" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1047,7 +1034,6 @@ if (data[at].checked){
 q45 = data[at].value;
 }
 }
-    console.log(q45);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n46()"><b><label id="p46" style="display:block;"><font size = "4">Do you feel restlessness, irritable or muscle tensions?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q46" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q46" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q46" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q46" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q46" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1062,7 +1048,6 @@ if (data[au].checked){
 q46 = data[au].value;
 }
 }
-    console.log(q46);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n47()"><b><label id="p47" style="display:block;"><font size = "4">Do you experience difficulty concentrating?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q47" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q47" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q47" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q47" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q47" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1077,7 +1062,6 @@ if (data[av].checked){
 q47 = data[av].value;
 }
 }
-    console.log(q47);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n48()"><b><label id="p48" style="display:block;"><font size = "4">Do you experience panic attacks (a sudden episode of intense fear that triggers severe physical reactions when there is no real danger or apparent cause)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q48" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q48" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q48" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q48" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q48" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1092,7 +1076,6 @@ if (data[aw].checked){
 q48 = data[aw].value;
 }
 }
-    console.log(q48);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="trauma()"><b><label id="p49" style="display:block;"><font size = "4">Do you experience difficulty with attention, focus or organization?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q49" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q49" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q49" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q49" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q49" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1109,7 +1092,6 @@ function trauma(){
     q49 = data[ax].value;
     }
     }
-        console.log(q49);
 
         document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n32()"><b><label id="trauma8" style="display:block;"><font size = "4">Have you experienced any traumatic event?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "trauma" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "trauma" value = "0">No</span></label><br></font>'+next
 }
@@ -1123,7 +1105,6 @@ function n32(){
     tra = data[tr].value;
     }
     }
-        console.log(tra);
 
         if (tra != 0){
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n41()"><b><label id="p33" style="display:block;"><font size = "4">Do you  think you have symptoms of anxiety, dissociation (disconnecting from one'+"'"+'s thought) and intrusion (flashbacks or nightmares) after experiencing or witnessing a traumatic event?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q33" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q33" value = "0">No</span></label><br></font>'+next
@@ -1142,7 +1123,6 @@ function n32(){
         var q33 = data[ah].value;
         }
         }
-console.log(q33)
     
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n49()"><b><label id="p42" style="display:block;"><font size = "4">Do you become consistently irritable, angry or paranoid after remembering a part traumatic event?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q42" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q42" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q42" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q42" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q42" value = "0">Never/No</span></label><br></font>'+next
     
@@ -1156,7 +1136,6 @@ if (data[aq].checked){
 var q42 = data[aq].value;
 }
 }
-console.log(q42)
     
 
         document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n36()"><b><label id="p50" style="display:block;"><font size = "4">Do you prefer to avoid remembering any traumatic event you might have experienced in the past?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q50" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q50" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q50" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q50" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q50" value = "0">Never/No</span></label><br></font>'+next
@@ -1175,7 +1154,6 @@ if (data[ay].checked){
 var q50 = data[ay].value;
 }
 }
-    console.log(q50);
 
 
 
@@ -1192,7 +1170,6 @@ if (data[al].checked){
 q37 = data[al].value;
 }
 }
-    console.log(q37);
 
     if (q37 != 0){
 
@@ -1214,7 +1191,6 @@ if (data[am].checked){
 q38 = data[am].value;
 }
 }
-    console.log(q38);
 
 document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n29()"><b><label id="p39" style="display:block;"><font size = "4">Do you need more of a substance like drugs, alcohols, etc. to achieve some kind of effect?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q39" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q39" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q39" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q39" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q39" value = "0">Never/No</span></label><br></font>'+next
 
@@ -1229,7 +1205,6 @@ if (data[an].checked){
 var q39 = data[an].value;
 }
 }
-console.log(q39)
 
 
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n30()"><b><label id="p30" style="display:block;"><font size = "4">Do you experience symptoms of depression (feeling disconnected or on the edge) or mania (extreme changes in mood swings) as a result of substance use (like alcohol, illegal drugs or overuse of prescribed medicines containing drugs)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q30" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q30" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q30" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q30" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q30" value = "0">Never/No</span></label><br></font>'+next
@@ -1245,7 +1220,6 @@ console.log(q39)
     q30 = data[ae].value;
     }
     }
-        console.log(q30);
     
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n39()"><b><label id="p31" style="display:block;"><font size = "4">Do you experience hallucinations (seeing things or people that are not actually there) or delusions (having a false belief in something that can or can not happen in real life) as a result of substance use ( like alcohol, illegal drugs or overuse of prescribed medicines containing drugs)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q31" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q31" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q31" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q31" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q31" value = "0">Never/No</span></label><br></font>'+next
     
@@ -1261,7 +1235,6 @@ console.log(q39)
         var q31 = data[af].value;
         }
         }
-        console.log(q31);
     
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n40()"><b><label id="p40" style="display:block;"><font size = "4">Do you have obsessive thoughts or fears that leads to compulsive behaviors or rituals (Doing acts to get rid of an obsession and/or decrease distress)?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q40" value = "1">Yes</span></label><br><label><span><input required type = "radio" name = "Q40" value = "0">No</span></label><br></font>'+next
     
@@ -1278,7 +1251,6 @@ console.log(q39)
     q40 = data[ao].value;
     }
     }
-        console.log(q40);
     
         if (q40 != 0){
     document.getElementById('mainbody').innerHTML = def+'<form onsubmit="n50()"><b><label id="p41" style="display:block;"><font size = "4">Do you feel guilt, shame or anxiety when you are unable to perform a compulsive behavior?<span class="q1i"><sup> &#9432;</sup></span><span class="i1">I am shown when someone hovers over the div above.</span></b></font></label><font size = "3"><label><span><br><input required type = "radio" name = "Q41" value = "1">Always/Yes</span></label><br><label><span><input required type = "radio" name = "Q41" value = "0.75">Quite Often</span></label><br><label><span><input required type = "radio" name = "Q41" value = "0.5">Sometimes</span></label><br><label><span><input required type = "radio" name = "Q41" value = "0.25">Rarely</span></label><br><label><span><input required type = "radio" name = "Q41" value = "0">Never/No</span></label><br></font>'+next
@@ -1308,7 +1280,6 @@ var q41 = data[ap].value;
 
 // Result tab
 
-console.log(q41)
 document.getElementById('mainbody').innerHTML = '<p id = "r1"></p><p id = "r2"></p><p id = "r3"></p><p id = "r4"></p><p id = "r5"></p><p id = "r6"></p><p id = "r7"></p><p id = "r8"></p><p id = "r9"></p><p id = "r10"></p><p id = "r11"></p><p id = "r12"></p><p id = "r13"></p><p id = "r14"></p><p id = "r15"></p><p id = "r16"></p><p id = "r17"></p><p id = "r18"></p><p id = "r19"></p><p id = "r20"></p><p id = "r21"></p><p id = "r22"></p><p id = "r23"></p><p id = "r24"></p><p id = "r25"></p><p id = "r26"></p><p id = "r27"></p><p id = "r28"></p><p id = "r29"></p><p id = "r30"></p>'
 
 
@@ -1509,7 +1480,7 @@ if (dep1 == dep.length){
 document.getElementById("r1").innerHTML = ("High chances of Depression \n")
 }
 else if (dep1 < (dep.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (dep1 == (dep.length)/2){
     screen = screen+'<h2><details><summary id = "r1"></summary><p>'+d1+'</p></details></h2>'
@@ -1524,7 +1495,7 @@ document.getElementById("r2").innerHTML = ("High chances of Bipolar Disorder \n"
 screen = screen+'<h2><details><summary id = "r2"></summary><p>'+d2+'</p></details></h2>'
 }
 else if (bip1 < (bip.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (bip1 == (bip.length)/2){
 document.getElementById("r2").innerHTML = ("Low chances of Bipolar Disorder \n")
@@ -1539,7 +1510,7 @@ document.getElementById("r3").innerHTML = ("High chances of Delusion \n")
 screen = screen+'<h2><details><summary id = "r3"></summary><p>'+d3+'</p></details></h2>'
 }
 else if (del1 < (del.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (del1 == (del.length)/2){
 document.getElementById("r3").innerHTML = ("Low chances of Delusion \n")
@@ -1554,7 +1525,7 @@ document.getElementById("r4").innerHTML = ("High chances of Hyperarousal \n")
 screen = screen+'<h2><details><summary id = "r4"></summary><p>'+d4+'</p></details></h2>'
 }
 else if (hyp1 < (hyp.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (hyp1 == (hyp.length)/2){
 document.getElementById("r4").innerHTML = ("Low chances of Hyperarousal \n")
@@ -1569,7 +1540,7 @@ document.getElementById("r5").innerHTML = ("High chances of Hallucination \n")
 screen = screen+'<h2><details><summary id = "r5"></summary><p>'+d5+'</p></details></h2>'
 }
 else if (hal1 < (hal.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (hal1 == (hal.length)/2){
 document.getElementById("r5").innerHTML = ("Low chances of Hallucination \n")
@@ -1584,7 +1555,7 @@ document.getElementById("r6").innerHTML = ("High chances of Anorexia Nervosa \n"
 screen = screen+'<h2><details><summary id = "r6"></summary><p>'+d6+'</p></details></h2>'
 }
 else if (ano1 < (ano.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (ano1 == (ano.length)/2){
 document.getElementById("r6").innerHTML = ("Low chances of Anorexia Nervosa \n")
@@ -1599,7 +1570,7 @@ document.getElementById("r7").innerHTML = ("High chances of Bulimia Nervosa \n")
 screen = screen+'<h2><details><summary id = "r7"></summary><p>'+d7+'</p></details></h2>'
 }
 else if (bul1 < (bul.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (bul1 == (bul.length)/2){
 document.getElementById("r7").innerHTML = ("Low chances of Bulimia Nervosa \n")
@@ -1614,7 +1585,7 @@ document.getElementById("r8").innerHTML = ("High chances of Binge Eating Disorde
 screen = screen+'<h2><details><summary id = "r8"></summary><p>'+d8+'</p></details></h2>'
 }
 else if (bed1 < (bed.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (bed1 == (bed.length)/2){
 document.getElementById("r8").innerHTML = ("Low chances of Binge Eating Disorder \n")
@@ -1629,7 +1600,7 @@ document.getElementById("r9").innerHTML = ("High chances of Insomania \n")
 screen = screen+'<h2><details><summary id = "r9"></summary><p>'+d9+'</p></details></h2>'
 }
 else if (ins1 < (ins.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (ins1 == (ins.length)/2){
 document.getElementById("r9").innerHTML = ("Low chances of Insomania \n")
@@ -1644,7 +1615,7 @@ document.getElementById("r10").innerHTML = ("High chances of Sleep Apnea \n")
 screen = screen+'<h2><details><summary id = "r10"></summary><p>'+d10+'</p></details></h2>'
 }
 else if (sle1 < (sle.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (sle1 == (sle.length)/2){
 document.getElementById("r10").innerHTML = ("Low chances of Sleep Apnea \n")
@@ -1659,7 +1630,7 @@ document.getElementById("r11").innerHTML = ("High chances of Narcolepsy \n")
 screen = screen+'<h2><details><summary id = "r11"></summary><p>'+d11+'</p></details></h2>'
 }
 else if (nar1 < (nar.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (nar1 == (nar.length)/2){
 document.getElementById("r11").innerHTML = ("Low chances of Narcolepsy \n")
@@ -1674,7 +1645,7 @@ document.getElementById("r12").innerHTML = ("High chances of Dissociative Identi
 screen = screen+'<h2><details><summary id = "r12"></summary><p>'+d12+'</p></details></h2>'
 }
 else if (did1 < (did.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (did1 == (did.length)/2){
 document.getElementById("r12").innerHTML = ("Low chances of Dissociative Identity Disorder \n")
@@ -1689,7 +1660,7 @@ document.getElementById("r13").innerHTML = ("High chances of Depersonalization D
 screen = screen+'<h2><details><summary id = "r13"></summary><p>'+d13+'</p></details></h2>'
 }
 else if (dd1 < (dd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (dd1 == (dd.length)/2){
 document.getElementById("r13").innerHTML = ("Low chances of Depersonalization Disorder \n")
@@ -1704,7 +1675,7 @@ document.getElementById("r14").innerHTML = ("High chances of Hypochondriasis \n"
 screen = screen+'<h2><details><summary id = "r14"></summary><p>'+d14+'</p></details></h2>'
 }
 else if (hypo1 < (hypo.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (hypo1 == (hypo.length)/2){
 document.getElementById("r14").innerHTML = ("Low chances of Hypochondriasis \n")
@@ -1719,7 +1690,7 @@ document.getElementById("r15").innerHTML = ("High chances of Conversion Disorder
 screen = screen+'<h2><details><summary id = "r15"></summary><p>'+d15+'</p></details></h2>'
 }
 else if (con1 < (con.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (con1 == (con.length)/2){
 document.getElementById("r15").innerHTML = ("Low chances of Conversion Disorder \n")
@@ -1734,7 +1705,7 @@ document.getElementById("r16").innerHTML = ("High chances of Borderline Personal
 screen = screen+'<h2><details><summary id = "r16"></summary><p>'+d16+'</p></details></h2>'
 }
 else if (bpd1 < (bpd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (bpd1 == (bpd.length)/2){
 document.getElementById("r16").innerHTML = ("Low chances of Borderline Personality Disorder \n")
@@ -1749,7 +1720,7 @@ document.getElementById("r17").innerHTML = ("High chances of Antisocial Personal
 screen = screen+'<h2><details><summary id = "r17"></summary><p>'+d17+'</p></details></h2>'
 }
 else if (apd1 < (apd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (apd1 == (apd.length)/2){
 document.getElementById("r17").innerHTML = ("Low chances of Antisocial Personality Disorder \n")
@@ -1764,7 +1735,7 @@ document.getElementById("r18").innerHTML = ("High chances of Gender Dysphoria \n
 screen = screen+'<h2><details><summary id = "r18"></summary><p>'+d18+'</p></details></h2>'
 }
 else if (gen1 < (gen.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (gen1 == (gen.length)/2){
 document.getElementById("r18").innerHTML = ("Low chances of Gender Dysphoria \n")
@@ -1779,7 +1750,7 @@ if (sex1 == sex.length){
     screen = screen+'<h2><details><summary id = "r19"></summary><p>'+d19+'</p></details></h2>'
 }
 else if (sex1 < (sex.length)/2) {
-    console.log(",")
+    console.log("")
 }
 else if (sex1 == (sex.length)/2){
     document.getElementById("r19").innerHTML = ("Low chances of Sexual Dysfunction \n")
@@ -1794,7 +1765,7 @@ document.getElementById("r20").innerHTML = ("High chances of Substance Induced M
 screen = screen+'<h2><details><summary id = "r20"></summary><p>'+d20+'</p></details></h2>'
 }
 else if (simd1 < (simd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (simd1 == (simd.length)/2){
 document.getElementById("r20").innerHTML = ("Low chances of Substance Induced Mood Disorder \n")
@@ -1809,7 +1780,7 @@ document.getElementById("r21").innerHTML = ("High chances of Substance Induced P
 screen = screen+'<h2><details><summary id = "r21"></summary><p>'+d21+'</p></details></h2>'
 }
 else if (sip1 < (sip.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (sip1 == (sip.length)/2){
 document.getElementById("r21").innerHTML = ("Low chances of Substance Induced Phycosis \n")
@@ -1824,7 +1795,7 @@ document.getElementById("r22").innerHTML = ("High chances of Adjustment Disorder
 screen = screen+'<h2><details><summary id = "r22"></summary><p>'+d22+'</p></details></h2>'
 }
 else if (adj1 < (adj.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (adj1 == (adj.length)/2){
 document.getElementById("r22").innerHTML = ("Low chances of Adjustment Disorder \n")
@@ -1839,7 +1810,7 @@ document.getElementById("r23").innerHTML = ("High chances of Acute Stress Disord
 screen = screen+'<h2><details><summary id = "r23"></summary><p>'+d23+'</p></details></h2>'
 }
 else if (asd1 < (asd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (asd1 == (asd.length)/2){
 document.getElementById("r23").innerHTML = ("Low chances of Acute Stress Disorder \n")
@@ -1854,7 +1825,7 @@ document.getElementById("r24").innerHTML = ("High chances of Alzheimer Disease \
 screen = screen+'<h2><details><summary id = "r24"></summary><p>'+d24+'</p></details></h2>'
 }
 else if (alz1 < (alz.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (alz1 == (alz.length)/2){
 document.getElementById("r24").innerHTML = ("Low chances of Alzheimer Disease \n")
@@ -1869,7 +1840,7 @@ document.getElementById("r25").innerHTML = ("High chances of Anxiety Disorder \n
 screen = screen+'<h2><details><summary id = "r25"></summary><p>'+d25+'</p></details></h2>'
 }
 else if (anxd1 < (anxd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (anxd1 == (anxd.length)/2){
 document.getElementById("r25").innerHTML = ("Low chances of Anxiety Disorder \n")
@@ -1884,7 +1855,7 @@ document.getElementById("r26").innerHTML = ("High chances of Schizophrenia \n")
 screen = screen+'<h2><details><summary id = "r26"></summary><p>'+d26+'</p></details></h2>'
 }
 else if (sch1 < (sch.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (sch1 == (sch.length)/2){
 document.getElementById("r26").innerHTML = ("Low chances of Schizophrenia \n")
@@ -1899,7 +1870,7 @@ document.getElementById("r27").innerHTML = ("High chances of Substance Use Disor
 screen = screen+'<h2><details><summary id = "r27"></summary><p>'+d27+'</p></details></h2>'
 }
 else if (sud1 < (sud.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (sud1 == (sud.length)/2){
 document.getElementById("r27").innerHTML = ("Low chances of Substance Use Disorder \n")
@@ -1914,7 +1885,7 @@ document.getElementById("r28").innerHTML = ("High chances of Obsessive Compulsiv
 screen = screen+'<h2><details><summary id = "r28"></summary><p>'+d28+'</p></details></h2>'
 }
 else if (ocd1 < (ocd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (ocd1 == (ocd.length)/2){
 document.getElementById("r28").innerHTML = ("Low chances of Obsessive Compulsive Disorder \n")
@@ -1929,7 +1900,7 @@ document.getElementById("r29").innerHTML = ("High chances of Post Traumatic Stre
 screen = screen+'<h2><details><summary id = "r29"></summary><p>'+d29+'</p></details></h2>'
 }
 else if (ptsd1 < (ptsd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (ptsd1 == (ptsd.length)/2){
 document.getElementById("r29").innerHTML = ("Low chances of Post Traumatic Stress Disorder \n")
@@ -1944,7 +1915,7 @@ document.getElementById("r30").innerHTML = ("High chances of Attention Deficit H
 screen = screen+'<h2><details><summary id = "r30"></summary><p>'+d30+'</p></details></h2>'
 }
 else if (adhd1 < (adhd.length)/2) {
-console.log(",")
+console.log("")
 }
 else if (adhd1 == (adhd.length)/2){
 document.getElementById("r30").innerHTML = ("Low chances of Attention Deficit Hyperactivity Disorder \n")
@@ -2034,7 +2005,7 @@ var params = {
         document.getElementById("r1").innerHTML = ("High chances of Depression")
     }
     else if (dep1 < (dep.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (dep1 == (dep.length)/2){
         document.getElementById("r1").innerHTML = ("Low chances of Depression")
@@ -2046,7 +2017,7 @@ var params = {
         document.getElementById("r2").innerHTML = ("High chances of Bipolar Disorder")
     }
     else if (bip1 < (bip.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (bip1 == (bip.length)/2){
         document.getElementById("r2").innerHTML = ("Low chances of Bipolar Disorder")
@@ -2058,7 +2029,7 @@ var params = {
         document.getElementById("r3").innerHTML = ("High chances of Delusion")
     }
     else if (del1 < (del.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (del1 == (del.length)/2){
         document.getElementById("r3").innerHTML = ("Low chances of Delusion")
@@ -2070,7 +2041,7 @@ var params = {
         document.getElementById("r4").innerHTML = ("High chances of Hyperarousal")
     }
     else if (hyp1 < (hyp.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (hyp1 == (hyp.length)/2){
         document.getElementById("r4").innerHTML = ("Low chances of Hyperarousal")
@@ -2082,7 +2053,7 @@ var params = {
         document.getElementById("r5").innerHTML = ("High chances of Hallucination")
     }
     else if (hal1 < (hal.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (hal1 == (hal.length)/2){
         document.getElementById("r5").innerHTML = ("Low chances of Hallucination")
@@ -2094,7 +2065,7 @@ var params = {
         document.getElementById("r6").innerHTML = ("High chances of Anorexia Nervosa")
     }
     else if (ano1 < (ano.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (ano1 == (ano.length)/2){
         document.getElementById("r6").innerHTML = ("Low chances of Anorexia Nervosa")
@@ -2106,7 +2077,7 @@ var params = {
         document.getElementById("r7").innerHTML = ("High chances of Bulimia Nervosa")
     }
     else if (bul1 < (bul.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (bul1 == (bul.length)/2){
         document.getElementById("r7").innerHTML = ("Low chances of Bulimia Nervosa")
@@ -2118,7 +2089,7 @@ var params = {
         document.getElementById("r8").innerHTML = ("High chances of Binge Eating Disorder")
     }
     else if (bed1 < (bed.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (bed1 == (bed.length)/2){
         document.getElementById("r8").innerHTML = ("Low chances of Binge Eating Disorder")
@@ -2130,7 +2101,7 @@ var params = {
         document.getElementById("r9").innerHTML = ("High chances of Insomania")
     }
     else if (ins1 < (ins.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (ins1 == (ins.length)/2){
         document.getElementById("r9").innerHTML = ("Low chances of Insomania")
@@ -2142,7 +2113,7 @@ var params = {
         document.getElementById("r10").innerHTML = ("High chances of Sleep Apnea")
     }
     else if (sle1 < (sle.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (sle1 == (sle.length)/2){
         document.getElementById("r10").innerHTML = ("Low chances of Sleep Apnea")
@@ -2154,7 +2125,7 @@ var params = {
         document.getElementById("r11").innerHTML = ("High chances of Narcolepsy")
     }
     else if (nar1 < (nar.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (nar1 == (nar.length)/2){
         document.getElementById("r11").innerHTML = ("Low chances of Narcolepsy")
@@ -2166,7 +2137,7 @@ var params = {
         document.getElementById("r12").innerHTML = ("High chances of Dissociative Identity Disorder")
     }
     else if (did1 < (did.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (did1 == (did.length)/2){
         document.getElementById("r12").innerHTML = ("Low chances of Dissociative Identity Disorder")
@@ -2178,7 +2149,7 @@ var params = {
         document.getElementById("r13").innerHTML = ("High chances of Depersonalization Disorder")
     }
     else if (dd1 < (dd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (dd1 == (dd.length)/2){
         document.getElementById("r13").innerHTML = ("Low chances of Depersonalization Disorder")
@@ -2190,7 +2161,7 @@ var params = {
         document.getElementById("r14").innerHTML = ("High chances of Hypochondriasis")
     }
     else if (hypo1 < (hypo.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (hypo1 == (hypo.length)/2){
         document.getElementById("r14").innerHTML = ("Low chances of Hypochondriasis")
@@ -2202,7 +2173,7 @@ var params = {
         document.getElementById("r15").innerHTML = ("High chances of Conversion Disorder")
     }
     else if (con1 < (con.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (con1 == (con.length)/2){
         document.getElementById("r15").innerHTML = ("Low chances of Conversion Disorder")
@@ -2214,7 +2185,7 @@ var params = {
         document.getElementById("r16").innerHTML = ("High chances of Borderline Personality Disorder")
     }
     else if (bpd1 < (bpd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (bpd1 == (bpd.length)/2){
         document.getElementById("r16").innerHTML = ("Low chances of Borderline Personality Disorder")
@@ -2226,7 +2197,7 @@ var params = {
         document.getElementById("r17").innerHTML = ("High chances of Antisocial Personality Disorder")
     }
     else if (apd1 < (apd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (apd1 == (apd.length)/2){
         document.getElementById("r17").innerHTML = ("Low chances of Antisocial Personality Disorder")
@@ -2238,7 +2209,7 @@ var params = {
         document.getElementById("r18").innerHTML = ("High chances of Gender Dysphoria")
     }
     else if (gen1 < (gen.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (gen1 == (gen.length)/2){
         document.getElementById("r18").innerHTML = ("Low chances of Gender Dysphoria")
@@ -2250,7 +2221,7 @@ var params = {
         document.getElementById("r19").innerHTML = ("High chances of Sexual Dysfunction")
     }
     else if (sex1 < (sex.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (sex1 == (sex.length)/2){
         document.getElementById("r19").innerHTML = ("Low chances of Sexual Dysfunction")
@@ -2262,7 +2233,7 @@ var params = {
         document.getElementById("r20").innerHTML = ("High chances of Substance Induced Mood Disorder")
     }
     else if (simd1 < (simd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (simd1 == (simd.length)/2){
         document.getElementById("r20").innerHTML = ("Low chances of Substance Induced Mood Disorder")
@@ -2274,7 +2245,7 @@ var params = {
         document.getElementById("r21").innerHTML = ("High chances of Substance Induced Phycosis")
     }
     else if (sip1 < (sip.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (sip1 == (sip.length)/2){
         document.getElementById("r21").innerHTML = ("Low chances of Substance Induced Phycosis")
@@ -2286,7 +2257,7 @@ var params = {
         document.getElementById("r22").innerHTML = ("High chances of Adjustment Disorder")
     }
     else if (adj1 < (adj.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (adj1 == (adj.length)/2){
         document.getElementById("r22").innerHTML = ("Low chances of Adjustment Disorder")
@@ -2298,7 +2269,7 @@ var params = {
         document.getElementById("r23").innerHTML = ("High chances of Acute Stress Disorder")
     }
     else if (asd1 < (asd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (asd1 == (asd.length)/2){
         document.getElementById("r23").innerHTML = ("Low chances of Acute Stress Disorder")
@@ -2310,7 +2281,7 @@ var params = {
         document.getElementById("r24").innerHTML = ("High chances of Alzheimer Disease")
     }
     else if (alz1 < (alz.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (alz1 == (alz.length)/2){
         document.getElementById("r24").innerHTML = ("Low chances of Alzheimer Disease")
@@ -2322,7 +2293,7 @@ var params = {
         document.getElementById("r25").innerHTML = ("High chances of Anxiety Disorder")
     }
     else if (anxd1 < (anxd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (anxd1 == (anxd.length)/2){
         document.getElementById("r25").innerHTML = ("Low chances of Anxiety Disorder")
@@ -2334,7 +2305,7 @@ var params = {
         document.getElementById("r26").innerHTML = ("High chances of Schizophrenia")
     }
     else if (sch1 < (sch.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (sch1 == (sch.length)/2){
         document.getElementById("r26").innerHTML = ("Low chances of Schizophrenia")
@@ -2346,7 +2317,7 @@ var params = {
         document.getElementById("r27").innerHTML = ("High chances of Substance Use Disorder")
     }
     else if (sud1 < (sud.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (sud1 == (sud.length)/2){
         document.getElementById("r27").innerHTML = ("Low chances of Substance Use Disorder")
@@ -2358,7 +2329,7 @@ var params = {
         document.getElementById("r28").innerHTML = ("High chances of Obsessive Compulsive Disorder")
     }
     else if (ocd1 < (ocd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (ocd1 == (ocd.length)/2){
         document.getElementById("r28").innerHTML = ("Low chances of Obsessive Compulsive Disorder")
@@ -2370,7 +2341,7 @@ var params = {
         document.getElementById("r29").innerHTML = ("High chances of Post Traumatic Stress Disorder")
     }
     else if (ptsd1 < (ptsd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (ptsd1 == (ptsd.length)/2){
         document.getElementById("r29").innerHTML = ("Low chances of Post Traumatic Stress Disorder")
@@ -2382,7 +2353,7 @@ var params = {
         document.getElementById("r30").innerHTML = ("High chances of Attention Deficit Hyperactivity Disorder")
     }
     else if (adhd1 < (adhd.length)/2) {
-        console.log(",")
+        console.log("")
     }
     else if (adhd1 == (adhd.length)/2){
         document.getElementById("r30").innerHTML = ("Low chances of Attention Deficit Hyperactivity Disorder")
